@@ -1,0 +1,23 @@
+A two-dimensional simulation of shape-shifting wild bodies.
+
+Dependencies (both can be installed with pip):
+- pymunk: [http://www.pymunk.org/en/latest/installation.html](http://www.pymunk.org/en/latest/installation.html)
+- pygame:
+[https://www.pygame.org/wiki/GettingStarted](https://www.pygame.org/wiki/GettingStarted)
+
+In progress features:
+Note: written in order of how I should proceed. First two points tied together really, line 70ish is where it is saving stuf, contacts line specifically which is ~80. So delete that section and make a new dictionary, count up num of bots its touching, num of other contacts it has (environment), and the time for each. dont need to log where they are in contact with the bot, x and y position
+Database lives in the collision_handler object. write to something, doesnt have to be a csv
+
+- write simulation data (x, y, orientation) for all bots to file with parameters
+(number, time) in filename
+- clean up and extend database. Each agent should have access to:
+    - number and types of current contacts (ex: 3 other bots, 2 env contacts)
+    - global time
+    - storage of sensor signals from last N timesteps
+- transition to/from spiky shape (ignore for now, Alli's task)
+
+Future goals:
+
+- Extend sensors, onboard memory, as needed by algorithms
+    - order of contact types around circumfrence?
