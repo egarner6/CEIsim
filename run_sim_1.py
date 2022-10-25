@@ -64,7 +64,7 @@ writer.writerow(['Testing that this writes', '2nd square'])
 global bots
 
 # class WildBodies(pygame.sprite.Sprite):
-class WildBodies:
+class WildBody:
     def __init__(self, ID):
         # pygame.sprite.Sprite.__init__(self)
         self.ID = ID
@@ -76,6 +76,7 @@ class WildBodies:
         self.vel = gen_rand_vec()
         self.body.velocity = self.vel[0], self.vel[1]
         self.shape.friction = muFhub
+    # update shape wihtout deleting the body and respawning it again like we might? be doing it now
 
 
 
@@ -226,7 +227,7 @@ def main():
 
     # spawn bots
     for i in range(N_agents):
-        bots[i] = WildBodies(i)
+        bots[i] = WildBody(i)
         space.add(bots[i].body, bots[i].shape)
         outputStr = "bot spawned at (" + str(bots[i].x) + ", " + str(bots[i].y) + ")"
         writer.writerow(outputStr)
